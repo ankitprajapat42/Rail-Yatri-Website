@@ -27,7 +27,7 @@ def login():
             cursor.execute(f"select password from accounts where email='{email}'")
             data = cursor.fetchall()[0][0]
             if password == data:
-                return render_template('home.html')
+                return render_template('index.html')
             else:
                 return render_template('login.html', msg='Password Incorrect')
         else:
@@ -62,8 +62,49 @@ def signup():
 
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    if request.method=='POST':
+        data=request.form.get('pnr')
+        print('Data ',data)
+       
+        url = f"https://irctc-indian-railway-pnr-status.p.rapidapi.com/getPNRStatus/{data}"
+
+        headers = {
+        "x-rapidapi-key": "8775ac996fmsh9b9e30fd95efd88p1032b6jsn5b39521a346d",
+        "x-rapidapi-host": "irctc-indian-railway-pnr-status.p.rapidapi.com"
+        }
+
+        response = requests.get(url, headers=headers)
+        result=response.json()
+        if result['success']==True:
+            d={
+                'Date Of Journey':result['data']['dateOfJourney'],
+                'Train Number' : result['data']['trainNumber'],
+                'Train Name' : result['data']['trainName'],
+                'Source Station': result['data']['sourceStation'],
+                'Destination Station': result['data']['destinationStation'],
+                'Boarding Point': result['data']['boardingPoint'],
+                'No of Passengerss':result['data']['numberOfpassenger']
+               }
+            passenger=[]
+            for i in result['data']['passengerList']:
+                passenger.append([i['passengerSerialNumber'],i['bookingStatusDetails'],i['currentStatusDetails']])
+            return render_template('index.html',d=d,passenger=passenger)
+        else:
+            return render_template('index.html',msg='No Such PNR Found')
+
+        return 'Successfull'
+    else:
+        return render_template('index.html')
+
+    
+
+
+@app.route('/login')
+def logout():
+    return render_template('login.html')
 
 
 if __name__=='__main__':
     app.run('localhost',1000,debug=True)
+
+

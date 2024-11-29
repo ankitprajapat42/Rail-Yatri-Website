@@ -17,7 +17,7 @@
           <button id="SEARCH_TRAIN" onclick="go_to_search_train()">SEARCH TRAIN</button>
           <button id="PNR" onclick="go_to_pnr()">PNR STATUS</button>
           <button id="ABOUT", onclick="go_to_about()">ABOUT</button>
-          <button>LOGOUT</button>
+          <a href="/login"><button>LOGOUT</button></a>
     
         </div>
       </header>
@@ -46,20 +46,20 @@
 
       <div id="pnr">
         <div class="box">
-            <form method="post" action="/pnr">
+            <form method="post" action="/home">
                 <h2>PNR Status</h2>
                 <input name="pnr" type="number" placeholder="Enter Your PNR No." required>
                 <button style="margin-top: 20px;" type="submit">Check Status</button>
             </form>
-            <!-- <div class="result">
+            <div class="result">
                 {% if msg %}
                 {{msg}}     
                 {% endif %}
-            </div> -->
+            </div>
         </div>
       </div> 
       
-        <!-- <div class="data">
+        <div class="data">
           <div class="d-flex flex-row mb-3">
               <div class="p-2">{% if d %}
                   <table class="table1", >
@@ -94,7 +94,7 @@
                   {% endif %}
                   </div>
               
-        </div> -->
+        </div>
 
       </div>
       
