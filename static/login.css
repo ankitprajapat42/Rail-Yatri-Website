@@ -1,0 +1,77 @@
+body{
+    height: 96vh;
+    background-image:url('https://img.freepik.com/free-photo/people-watching-as-train-approaches_1353-227.jpg?t=st=1723019179~exp=1723022779~hmac=5eade0cc27738069de0ce88c98ad11b7ea013e520bb1b60d5e022f34818052e7&w=1060') ;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.box{
+    height: 45vh;
+    width: 30%;
+    border: 2px solid orange    ;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    padding: 2%;
+    
+    
+    
+
+}
+
+.box h1{
+    margin-top: -1%;
+    text-align: center;
+    color: orange;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.box label{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-top: -4px;
+    
+}
+
+.box input{
+    width: 94%;
+    padding-left: 3%;
+    padding-right: 3%;
+    height: 30px;
+    margin-top: 1%;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    outline: 1px;
+}
+
+.box button{
+    width: 100%;
+    margin-top: 5%;
+    height: 30px;
+    background-color: green;
+    border: none;
+    color: whitesmoke;
+    font-size: large;
+    border-radius: 10px;
+}
+
+#password{
+    margin-top: 10%;
+}
+
+#l-password{
+    margin-top: 2.3%;
+}
+
+.result{
+    margin-top: -2%;
+    color: red;
+
+}

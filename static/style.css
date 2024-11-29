@@ -1,0 +1,306 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    height: 300vh;
+}
+
+header{
+    height: 14vh;
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid black ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.Logo{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+
+   
+    
+}
+
+.Logo img{
+    height: 100%;
+    width: auto;
+    margin-left: 1%;
+    
+}
+
+.Logo h1{
+    font-size: 8vh;
+    margin-left: 1%;
+}
+
+.nev{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.nev button{
+    height: 30px;
+    width: auto;
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    
+}
+
+.nev button:hover{
+    color: orange;
+}
+
+
+.silider{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    
+}  
+
+.img1, .img2, .img3{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+}
+
+img{
+    height: 100vh;
+    width: 100%;
+    
+}
+
+
+
+
+
+
+.search{
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://static.tnn.in/thumb/msid-115623263,thumbsize-79500,width-1280,height-720,resizemode-75/115623263.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+.search input{
+    margin-top: 4%;
+    height: 40px;
+    width: 60%;
+    padding-left: 1.5%;
+    padding-right: 10%; 
+    border-radius: 30px;
+    border: 1.5px solid black;
+    outline: none;
+    font-size: 16px;
+}
+
+.search button{
+    margin-top: 4.1%;
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 30px;
+    background-color: orange;
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    left: 77.9%;
+    
+    
+}
+
+.search button:active{
+    background-color: whitesmoke;
+    color: orange;
+}
+
+
+
+
+
+
+#pnr{
+    height: 100vh;
+    width: 100%;
+    background-color: transparent;
+    background-image: url("https://img.freepik.com/free-photo/people-watching-as-train-approaches_1353-227.jpg?uid=R60274381&ga=GA1.2.1492629552.1718952066&semt=ais_hybrid");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+
+.box{
+    margin-top: 3%;
+    height: 120px;
+    width: 35%;
+    background-color: white;
+    display: block;
+    padding: 2%;
+    border: 2px solid orange;
+    border-radius: 10px;
+}
+
+
+.box h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    margin-bottom: 3%;
+}
+
+
+.box input{
+    height: 30px;
+    width: 90%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;
+
+    
+}
+
+.box button{
+    height: 30px;
+    width: 150px;
+    border: none;
+    background-color: orange;
+    color: whitesmoke;
+    border-radius: 30px;
+    font-weight: bolder;
+    font-size: 14px;
+    
+
+}
+
+.result{
+    margin-top: 2%;
+    color: red;
+
+}
+
+.data{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.table1 td{
+    height: auto;
+    width: 200px;
+    margin-top: 2%;
+}
+
+.table2{
+    border: 2px solid black;
+}
+
+.table2 td{
+    height: auto;
+    width: 180px;
+    text-align: center;
+    border: 1px solid black;
+    margin-top: 5%;
+} 
+
+#a{
+    width: 50px;
+}
+
+#b{
+    width: 190px;
+}
+
+#c{
+    width: 130px;
+}
+
+
+
+footer{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+}
+
+footer img{
+    height: auto;
+    width: 50vh;
+}
+
+.foot{
+    height: 100%;
+    width: 70%;
+    
+}
+
+.foot h1{
+    margin-top: 5%;
+}
+
+.foot p{
+    margin-top: 2%;
+}
+
+
+
+
+#myBtn {
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 30px; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: orange; 
+    color: white; 
+    cursor: pointer; 
+    padding: 15px; 
+    border-radius: 10px; 
+    font-size: 18px; 
+    font-weight: bold;
+  }
+  
+  #myBtn:hover {
+    background-color: #555; 
+  }
+  
+
+
+
+
+
+::-webkit-scrollbar{
+    width: 0px;
+}
+
+
+
+

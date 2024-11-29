@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rali Yatri</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header>
+        <div class="Logo">
+          <img src="../static/logo.png" alt="">
+          <h1>Rail Yatari</h1>
+        </div>
+        <div class="nev">
+          <button>HOME</button>
+          <button id="SEARCH_TRAIN" onclick="go_to_search_train()">SEARCH TRAIN</button>
+          <button id="PNR" onclick="go_to_pnr()">PNR STATUS</button>
+          <button id="ABOUT", onclick="go_to_about()">ABOUT</button>
+          <button>LOGOUT</button>
+    
+        </div>
+      </header>
+      <div class="silider">
+
+        <!-- <div class="img1">
+          <img src="https://wallpaperaccess.com/full/8615474.jpg" alt="">
+        </div> -->
+  
+        <div class="img1">
+          <img src="https://img.freepik.com/free-photo/transport-concept-with-train_23-2148959670.jpg?uid=R60274381&ga=GA1.2.1492629552.1718952066&semt=ais_hybrid" alt="">
+        </div>
+  
+        <div class="img2">
+          <img src="https://static.investindia.gov.in/s3fs-public/2019-07/railway4.jpg" alt="">
+        </div>
+  
+      </div>
+
+      <div class="search", id="S_TRAIN">
+        
+        <input type="text" name="search_data" placeholder="Enter the Train Name/Train No.">
+        <button>Search</button>
+      </div>
+      
+
+      <div id="pnr">
+        <div class="box">
+            <form method="post" action="/pnr">
+                <h2>PNR Status</h2>
+                <input name="pnr" type="number" placeholder="Enter Your PNR No." required>
+                <button style="margin-top: 20px;" type="submit">Check Status</button>
+            </form>
+            <!-- <div class="result">
+                {% if msg %}
+                {{msg}}     
+                {% endif %}
+            </div> -->
+        </div>
+      </div> 
+      
+        <!-- <div class="data">
+          <div class="d-flex flex-row mb-3">
+              <div class="p-2">{% if d %}
+                  <table class="table1", >
+                      {% for i,j in d.items() %}
+                          <tr>
+                  <td>{{i}}</td>
+                  <td>{{j}}</td>
+                  
+                  
+                          </tr>        
+                      {% endfor %}
+                  </table>
+                  </div>
+                  {% endif %}
+              <div class="p-2">  {% if passenger %}
+                  <table class="table2">
+                      <tr>
+                          <td id="a">S.No</td>
+                          <td id="b">Booking Status</td>
+                          <td id="c">Current Status</td>
+                          
+                      </tr>
+                      {% for i in passenger %}
+                      <tr>
+                          <td id="a">{{i[0]}}</td>
+                          <td id="b">{{i[1]}}</td>
+                          <td id="c">{{i[2]}}</td>
+                          
+                      </tr>        
+                      {% endfor %}
+                  </table>
+                  {% endif %}
+                  </div>
+              
+        </div> -->
+
+      </div>
+      
+    
+
+      <footer id="about">
+        <img src="../static/logo.png" alt="">
+
+        <div class="foot">
+          <h1>ABOUT US</h1>
+          <hr>
+          <p>Rail Yatri is your one-stop solution for all train travel needs in India. Our platform offers easy-to-use features like Login & Signup, PNR Status Check, and Train Search by Name or Number, making your journey planning seamless and efficient.
+
+            With real-time updates and a user-friendly interface, we ensure accurate information and hassle-free travel assistance. Whether you're a frequent traveler or planning a special trip, Rail Yatri is here to simplify your train journey experience.</p>
+        </div>
+
+
+      </footer>
+
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+
+
+
+
+
+      <script>
+        function go_to_search_train(){
+          const button = document.getElementById('SEARCH_TRAIN');
+          const targetDiv = document.getElementById('S_TRAIN');
+      
+          button.addEventListener('click', () => {
+            targetDiv.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to div
+          });
+        }
+
+        function go_to_pnr(){
+          const button = document.getElementById('PNR');
+          const targetDiv = document.getElementById('pnr');
+      
+          button.addEventListener('click', () => {
+            targetDiv.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to div
+          });
+        }
+
+
+        function go_to_about(){
+          const button = document.getElementById('ABOUT');
+          const targetDiv = document.getElementById('about');
+      
+          button.addEventListener('click', () => {
+            targetDiv.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to div
+          });
+        }
+        
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }        
+
+
+      </script>
+
+
+
+    
+</body>
+</html>
