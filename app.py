@@ -1,0 +1,69 @@
+from flask import Flask,render_template,request
+import requests
+import pymysql
+
+
+# Database Connectivity 
+db =pymysql.connect(
+    host ='localhost', 
+    user ='root',
+    password='',
+    port=3306,
+    database='railyatari'
+)
+
+
+app=Flask(__name__)
+@app.route('/login', methods=['GET','POST'])
+def login():
+    if request.method=='POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        cursor = db.cursor()
+        cursor.execute(f"select email from accounts;")
+        d = cursor.fetchall()
+        emails_list = [i[0] for i in d]
+        if email in emails_list:
+            cursor.execute(f"select password from accounts where email='{email}'")
+            data = cursor.fetchall()[0][0]
+            if password == data:
+                return render_template('home.html')
+            else:
+                return render_template('login.html', msg='Password Incorrect')
+        else:
+            return render_template('login.html', msg='Invalid User')
+
+    else:
+        return render_template('login.html')
+    
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method=='POST':
+        Name = request.form.get('name')
+        Email = request.form.get('email')
+        Mobile_no = request.form.get('mobile_no')
+        Password = request.form.get('password')
+        cursor = db.cursor()
+        cursor.execute(f"select email from accounts;")
+        d = cursor.fetchall()
+        emails_list = [i[0] for i in d]
+        if Email in emails_list:
+            return "This Email Already Used"
+        else:
+            cursor.execute(f"insert into accounts values('{Name}', '{Email}', {Mobile_no}, '{Password}');")
+            cursor.fetchall()
+            db.commit() 
+            return render_template('signup.html', msg="Your Account is Created Go to Login")
+            
+    else:
+        return render_template('Signup.html')
+    
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+
+if __name__=='__main__':
+    app.run('localhost',1000,debug=True)
