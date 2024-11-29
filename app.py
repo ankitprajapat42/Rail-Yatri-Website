@@ -60,7 +60,7 @@ def signup():
         return render_template('Signup.html')
     
 
-@app.route('/home')
+@app.route('/home', methods=['GET', 'POST'])
 def home():
     if request.method=='POST':
         data=request.form.get('pnr')
@@ -69,8 +69,8 @@ def home():
         url = f"https://irctc-indian-railway-pnr-status.p.rapidapi.com/getPNRStatus/{data}"
 
         headers = {
-        "x-rapidapi-key": "8775ac996fmsh9b9e30fd95efd88p1032b6jsn5b39521a346d",
-        "x-rapidapi-host": "irctc-indian-railway-pnr-status.p.rapidapi.com"
+        "x-rapidapi-key": "85f0ad05dcmshf87cfc57243f0dfp1bed87jsndf79b2191f95",
+	    "x-rapidapi-host": "irctc-indian-railway-pnr-status.p.rapidapi.com"
         }
 
         response = requests.get(url, headers=headers)
